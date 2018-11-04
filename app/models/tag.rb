@@ -46,6 +46,10 @@ class Tag < ApplicationRecord
     nodes = Node.where(nid: node_tag.collect(&:nid))
   end
 
+  def find_node_by_title(title)
+    find_node_by_title = Node.find_by(title: title)
+  end
+
   def belongs_to(current_user, nid)
     node_tag = node_tag.find_by(nid: nid)
     node_tag && node_tag.uid == current_user.uid || node_tag.node.uid == current_user.uid
