@@ -9,7 +9,7 @@
         <% @tags.each_with_index do |tag| %>
         <div class="col-xs-3 col-sm-3 col-md-3 clearfix" style="min-height: 50px; text-align: center;">
           <% if tag.find_node_by_title(tag.title).main_image %>
-            <a class="img" <% if @widget %>target="_blank"<% end %> href="<%= tag.path %>"><img src="<%= tag.find_node_by_title(tag.title).main_image.path %>" style="width:100%;" /></a>
+            <a class="img" <% if @widget %>target="_blank"<% end %> href="<%= tag.path %>"><img src="<%= tag.find_node_by_title(tag.title).main_image.path %>" alt="<%= tag.title %>" style="width:100%;" /></a>
           <% end %>
           <h3><a href="<%= tag.path %>"><%= tag.title %></a></h3>
           <a class="btn btn-default" style="float: right; margin-left: 1px;" href="<%= tag.path %>">Read more</a>
